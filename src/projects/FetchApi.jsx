@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 // how to fetch apis using axios
-const Api = () => {
+const FetchApi = () => {
     const [jokes, setJokes] = useState([])
 
     const url = 'https://official-joke-api.appspot.com/random_ten'
@@ -18,20 +18,22 @@ const Api = () => {
     },[])
     return(
     <>
-      <div>
-        <h1>Hey there!</h1>
+      <div className='flex flex-col items-center py-5'>
+        <h1 className='bg-slate-700 px-5 py-2 rounded-lg'>Hey there! Jokes API</h1>
         <span>Jokes:{jokes.length}</span>
-        {
-          jokes.map((joke) => (
-              <div key={joke.id}>
-                  <h3>{joke.setup}</h3>
-                  <p>{joke.punchline}</p>
-              </div>
-          ))
-        }
+        <ol className='list-decimal'>
+          {
+            jokes.map((joke) => (
+                <li key={joke.id}>
+                    <h3>{joke.setup}</h3>
+                    <p>{joke.punchline}</p>
+                </li>
+            ))
+          }
+        </ol>       
       </div>
     </>
   )
 }
 
-export default Api
+export default FetchApi
