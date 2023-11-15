@@ -16,6 +16,7 @@ const FetchApi = () => {
           console.log(error)
       })
     },[])
+  
     return(
     <>
       <div className='flex flex-col items-center py-5'>

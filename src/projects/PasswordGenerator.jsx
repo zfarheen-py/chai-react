@@ -19,11 +19,9 @@ function PasswordGenerator() {
     for (let i = 1; i <= length; i++) {
       let char = Math.floor(Math.random() * str.length + 1)
       pass += str.charAt(char)
-
     }
 
     setPassword(pass)
-
 
   }, [length, numberAllowed, charAllowed, setPassword])
 
@@ -56,7 +54,6 @@ function PasswordGenerator() {
         onClick={copyPasswordToClipboard}
         className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'
         >copy</button>
-
     </div>
     <div className='flex text-sm gap-x-2'>
       <div className='flex items-center gap-x-1'>
